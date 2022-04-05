@@ -8,6 +8,26 @@
     font-size: x-large;
 }
 
+.main{
+    text-align: center;
+    text-decoration: none;
+}
+
+.timer{
+    text-align: right;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.qDiv{
+    font-size: x-large;
+}
+
+#choiceUl{
+margin-top: 75px;
+text-align: center;
+}
+
 .homePage{
     text-align: center;
     margin-top: 75px;
@@ -22,6 +42,8 @@ p{
 }
 
 #begin, #again, #clear{
+    display: flex;
+    justify-content: center;
     background-color: green;
     color: white;
     padding: 15px 32px;
@@ -30,5 +52,5 @@ p{
     display: inline-block;
     font-size: 16px;
     border-radius: 10px 10px 10px 10px;
-    align-self: center;
+
 }

@@ -7,7 +7,7 @@ var questions = [
 
     {
         question: "How do you create a numbered list?",
-        options: ["<ul>", "<ol>", "<nl", "dl"],
+        options: ["<ul>", "<ol>", "<nl>", "<dl>"],
         answer: "<ol>",
     },
 
@@ -45,12 +45,12 @@ clock.addEventListener("click", function(){
 if (interval===0){
     interval=setInterval(function(){
         secondsLeft--;
-        clock.textContent="REMAINING TIME: " + secondsLeft;
+        timer.textContent="REMAINING TIME: " + secondsLeft;
 
         if (secondsLeft<=0){
             clearInterval(interval);
             gameOver();
-            clock.textContent= "Times up! Lets see how you went";
+            timer.textContent= "Times up! Lets see how you went";
         }
     },1000);
 }
@@ -69,7 +69,8 @@ btn.onclick=function(){
 function render(questionList){
     qDiv.innerHTML="";
     ulCreate.innerHTML="";
-    for (var i=0; i<questions.length;i++){
+
+    for (var i=0; i < questions.length; i++){
         var xQuestion=questions[questionList].question;
         var xChoices=questions[questionList].options;
         qDiv.textContent=xQuestion;
@@ -111,3 +112,4 @@ questionList++;
     }
     qDiv.appendChild(createDiv);
 }
+
