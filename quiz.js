@@ -56,11 +56,11 @@ if (interval===0){
 }
 render(questionList);
 });
+
 const targetDiv=document.getElementById("hide");
 const btn=document.getElementById("begin");
 btn.onclick=function(){
-    if (targetDiv.style.display !=="none"){
-        targetDiv.style.display="none";
+    if (targetDiv.style.display="none"){
     }   else {
         targetDiv.style.display="block";
     }
