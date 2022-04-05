@@ -32,12 +32,14 @@ var questions = [
 
 var score=0;
 var questionList= 0;
+var main=document.querySelector(".main");
 var timer= document.querySelector(".timer");
 var clock= document.querySelector("#begin");
 var qDiv= document.querySelector(".qDiv");
 var secondsLeft= 31;
 var incorrect= 5;
 var interval=0;
+var ulCreate=document.createElement("ul");
 
 clock.addEventListener("click", function(){
 if (interval===0){
@@ -54,5 +56,58 @@ if (interval===0){
 }
 render(questionList);
 });
+const targetDiv=document.getElementById("hide");
+const btn=document.getElementById("begin");
+btn.onclick=function(){
+    if (targetDiv.style.display !=="none"){
+        targetDiv.style.display="none";
+    }   else {
+        targetDiv.style.display="block";
+    }
+};
 
+function render(questionList){
+    qDiv.innerHTML="";
+    ulCreate.innerHTML="";
+    for (var i=0; i<questions.length;i++){
+        var xQuestion=questions[questionList].question;
+        var xChoices=questions[questionList].options;
+        qDiv.textContent=xQuestion;
+    }
+    xChoices.forEach(function(newItem){
+        var listItem=document.createElement("li");
+        listItem.textContent=newItem;
+        qDiv.appendChild(ulCreate);
+        ulCreate.appendChild(listItem);
+        listItem.addEventListener("click",(compare));
+    })
+}
 
+function compare(event){
+    var element=event.target;
+
+    if (element.matches("li")){
+
+        var createDiv=document.createElement("div");
+        createDiv.setAttribute("id", "createDiv");
+
+        if (element.textContent==questions[questionList].answer){
+            score++;
+            createDiv.textContent= "Correct!";
+        
+        } else {
+        secondsLeft=secondsLeft-incorrect
+        createDiv.textContent="Incorrect!";
+    }
+}
+
+questionList++;
+
+    if (questionList>=questions.length){
+        gameOver();
+        createDiv.textContent="Time's up! " + "you got " + score + " out of" + questions.length + " Correct";
+    } else {
+        render(questionList);
+    }
+    qDiv.appendChild(createDiv);
+}
