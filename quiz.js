@@ -106,10 +106,15 @@ questionList++;
 
     if (questionList>=questions.length){
         gameOver();
-        createDiv.textContent="Time's up! " + "you got " + score + " out of" + questions.length + " Correct";
+        createDiv.textContent="Time's up! " + "you got " + score + " out of " + questions.length + " Correct";
     } else {
         render(questionList);
     }
     qDiv.appendChild(createDiv);
+}
+
+function gameOver(){
+    qDiv.innerHTML= "";
+    timer.innerHTML="";
 }
 
