@@ -31,36 +31,28 @@ var questions = [
 ];
 
 var score=0;
-var questionslist= 0;
-var timer= document.querySelector("#timer");
+var questionList= 0;
+var timer= document.querySelector(".timer");
 var clock= document.querySelector("#begin");
-var qDiv= document.querySelector("#qDiv");
-var remainingTime= 30;
+var qDiv= document.querySelector(".qDiv");
+var secondsLeft= 31;
 var incorrect= 5;
 var interval=0;
 
-timer.addEventListener("click", function(){
+clock.addEventListener("click", function(){
 if (interval===0){
     interval=setInterval(function(){
-        remainingTime--;
-        timer.textContent="REMAINING TIME: " + remainingTime;
+        secondsLeft--;
+        clock.textContent="REMAINING TIME: " + secondsLeft;
 
-        if (remainingTime=0){
+        if (secondsLeft<=0){
             clearInterval(interval);
             gameOver();
-            timer.textContent= "Times up! How did you go?"
+            clock.textContent= "Times up! Lets see how you went";
         }
-    });
+    },1000);
 }
-}
-
-
-
-
-
-
-)
-
-
+render(questionList);
+});
 
 
