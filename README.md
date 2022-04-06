@@ -25,4 +25,4 @@ This image shows the final page of the quiz which asks for the user initials in 
 This image shows an example of previously saved high scores:
 ![quiz](./assets/HighScores.png)
 
-Application link:
+Application link: https://gkal14.github.io/coding-quiz/
