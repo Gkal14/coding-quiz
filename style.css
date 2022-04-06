@@ -23,9 +23,15 @@
     font-size: x-large;
 }
 
-#choiceUl{
+ul{
 margin-top: 75px;
 text-align: center;
+list-style-type: none;
+}
+
+li{
+    border: 2px solid black;
+    margin-bottom: 5px;
 }
 
 .homePage{

@@ -36,12 +36,13 @@ var main=document.querySelector(".main");
 var timer= document.querySelector(".timer");
 var clock= document.querySelector("#begin");
 var qDiv= document.querySelector(".qDiv");
-var secondsLeft= 31;
+var secondsLeft= 51;
 var incorrect= 5;
 var interval=0;
 var ulCreate=document.createElement("ul");
 
 clock.addEventListener("click", function(){
+    clock.style.display="none";
 if (interval===0){
     interval=setInterval(function(){
         secondsLeft--;
@@ -50,12 +51,18 @@ if (interval===0){
         if (secondsLeft<=0){
             clearInterval(interval);
             gameOver();
-            timer.textContent= "Times up! Lets see how you went";
+            timer.textContent= "Time's up!";
+
+            if (secondsLeft>=0){
+                var timeRemaining=secondsLeft;
+                var createP=document.createElement("p");
+            }
         }
     },1000);
 }
 render(questionList);
 });
+
 
 const targetDiv=document.getElementById("hide");
 const btn=document.getElementById("begin");
@@ -64,6 +71,7 @@ btn.onclick=function(){
     }   else {
         targetDiv.style.display="block";
     }
+    
 };
 
 function render(questionList){
@@ -118,3 +126,16 @@ function gameOver(){
     timer.innerHTML="";
 }
 
+qDiv.appendChild(createH1);
+
+var createP=document.createElement("p");
+createP.setAttribute("id", "createP");
+
+if (secondsLeft >=0){
+    var remainingTime=secondsLeft;
+    var createP=document.createElement("p");
+    clearInterval(interval);
+    createP.textContent="Your score is: " + remainingTime;
+console.log("score")
+    qDiv.appendChild(createP);
+}
