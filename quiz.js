@@ -41,6 +41,8 @@ var incorrect= 5;
 var interval=0;
 var ulCreate=document.createElement("ul");
 
+
+// Timer to start when the begin button is pressed
 clock.addEventListener("click", function(){
     clock.style.display="none";
 if (interval===0){
@@ -48,15 +50,12 @@ if (interval===0){
         secondsLeft--;
         timer.textContent="REMAINING TIME: " + secondsLeft;
 
+        // message to display when timer runs out
         if (secondsLeft<=0){
             clearInterval(interval);
             gameOver();
             timer.textContent= "Time's up!";
 
-        //     if (secondsLeft>=0){
-        //         var timeRemaining=secondsLeft;
-        //         var createP=document.createElement("p");
-            // }
         }
     },1000);
 }
@@ -81,6 +80,7 @@ function render(questionList){
     })
 }
 
+// This function generates the message below the questions which returns a message based on how it was answered
 function compare(event){
     var element=event.target;
 
@@ -99,6 +99,7 @@ function compare(event){
     }
 }
 
+// Tells the user how many questions they answered correctlty out of the total
 questionList++;
 
     if (questionList>=questions.length){
@@ -115,6 +116,7 @@ function gameOver(){
     timer.innerHTML="";
 
 
+    // All elements generated for the final score page
 var createH2=document.createElement("h2");
 createH2.setAttribute("id","createH2");
 createH2.textContent="Game Over!"
@@ -158,6 +160,8 @@ createSubmit.textContent="submit";
 
 qDiv.appendChild(createSubmit);
 
+
+// This event listener stores Initials and score to local storage
 createSubmit.addEventListener("click", function(){
 var initials=createInput.value;
 

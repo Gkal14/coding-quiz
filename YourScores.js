@@ -1,7 +1,8 @@
 var scores=document.querySelector("#scores");
-var again=document.querySelector("#again");
 var clear=document.querySelector("#clear");
  
+
+// listing high scores and added event to clear high scores from local storage
 clear.addEventListener("click", function(){
     localStorage.clear();
     location.reload();
