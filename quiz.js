@@ -124,12 +124,18 @@ questionList++;
 function gameOver(){
     qDiv.innerHTML= "";
     timer.innerHTML="";
-}
 
-qDiv.appendChild(createH1);
+
+var createH2=document.createElement("h2");
+createH2.setAttribute("id","createH2");
+createH2.textContent="Game Over!"
+
+qDiv.appendChild(createH2);
 
 var createP=document.createElement("p");
 createP.setAttribute("id", "createP");
+
+qDiv.appendChild(createP);
 
 if (secondsLeft >=0){
     var remainingTime=secondsLeft;
@@ -138,4 +144,9 @@ if (secondsLeft >=0){
     createP.textContent="Your score is: " + remainingTime;
 console.log("score")
     qDiv.appendChild(createP);
+}
+
+function gameOver(){
+
+}
 }
