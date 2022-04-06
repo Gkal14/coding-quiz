@@ -1,58 +1,87 @@
 * {
- background-color: antiquewhite;    
-}
-
-.high-scores{
-    text-align: center;
-    text-decoration: none;
-    font-size: x-large;
-}
-
-.main{
-    text-align: center;
-    text-decoration: none;
-}
-
-.timer{
-    text-align: right;
-    margin-top: 30px;
-    margin-bottom: 20px;
-}
-
-.qDiv{
+    background-color: antiquewhite;    
+   }
    
-}
+   .high-scores{
+       text-align: center;
+       text-decoration: none;
+       font-size: x-large;
+   }
+   
+   h1, h2{
+    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Permanent Marker', cursive;
+   }
 
-ul{
-margin-top: 75px;
-text-align: center;
-list-style-type: none;
-font-size: x-large;
-}
-
-li{
-    border: 2px solid black;
-    margin-bottom: 5px;
-    margin-right: 40px;
-}
-
-.homePage{
-    text-align: center;
-    margin-top: 75px;
-}
-
-.high{
-    text-align: center;
-}
-
-p{ 
-    font-size: larger;
-}
-
-#begin, #again, #clear {
-    display: flex;
+   .main{
+       text-align: center;
+       text-decoration: none;
+   }
+   
+   .timer{
+       text-align: center;
+       margin-top: 30px;
+       margin-bottom: 20px;
+       font-size: 20px;
+   }
+   
+   .timerCountdown {
+       padding-bottom: 50px;
+   }
+   
+   .qDiv{
+       font-size: x-large;
+   }
+   
+   ul{
+       margin-top: 30px;
+       text-align: center;
+       list-style-type: none;
+       font-size: x-large;
+   }
+   
+   li{
+       border: 2px solid black;
+       margin-bottom: 5px;
+       margin-right: 40px;
+       cursor: pointer;
+       display: inline-block;
+       padding: 20px;
+       border-radius: 15px;
+       background-color: white;
+   }
+   
+   .homePage{
+       text-align: center;
+       margin-top: 75px;
+   }
+   
+   .high{
+       text-align: center;
+   }
+   
+   p{
+       font-size: larger;
+       font-family: 'Bebas Neue', cursive;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: bold;
+   }
+   
+   #begin, #again, #clear {
+       justify-content: center;
+       background-color: green;
+       color: white;
+       padding: 15px 32px;
+       text-align: center;
+       text-decoration: none;
+       display: inline-block;
+       font-size: 16px;
+       border-radius: 10px 10px 10px 10px;
+       cursor: pointer;
+   }
+   #clear{
     justify-content: center;
-    background-color: green;
+    background-color: red;
     color: white;
     padding: 15px 32px;
     text-align: center;
@@ -60,24 +89,34 @@ p{
     display: inline-block;
     font-size: 16px;
     border-radius: 10px 10px 10px 10px;
+    cursor: pointer;
+   }
+   
+   #createDiv{
+       padding-top: 20px;
+       margin-top: 20px;
+       border-top: 2px solid black;
+   }
+   
+   #submit{
+       background-color: green;
+       color: white;
+       text-decoration: none;
+       font-size: 16px;
+       border-radius: 10px 10px 10px 10px;
+       margin-left: 2%;
+       padding: 12px 32px;
+       cursor: pointer;
+   }
+   
+   #initials{
+       background-color: white;
+       height: 35px;
+       border-radius: 8px;
+   }
 
-}
-
-#createDiv{
-    margin-top: 20px;
-    border-top: 2px solid black;
-}
-
-#submit{
-    background-color: green;
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-    border-radius: 10px 10px 10px 10px;
-    margin-left: 33%;
-    padding: 15px 32px; 
-}
-
-#initials{
-    background-color: white;
+#scores{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }

@@ -53,10 +53,10 @@ if (interval===0){
             gameOver();
             timer.textContent= "Time's up!";
 
-            if (secondsLeft>=0){
-                var timeRemaining=secondsLeft;
-                var createP=document.createElement("p");
-            }
+        //     if (secondsLeft>=0){
+        //         var timeRemaining=secondsLeft;
+        //         var createP=document.createElement("p");
+            // }
         }
     },1000);
 }
@@ -143,13 +143,6 @@ createLabel.textContent="Enter your initials to save your score: "
 
 qDiv.appendChild(createLabel);
 
-
-var createSubmit=document.createElement("button");
-createSubmit.setAttribute("type", "submit");
-createSubmit.setAttribute("id", "submit");
-createSubmit.textContent="submit";
-
-qDiv.appendChild(createSubmit);
 var createInput=document.createElement("input");
 createInput.setAttribute("type", "text");
 createInput.setAttribute("id", "initials");
@@ -157,11 +150,19 @@ createInput.textContent="";
 
 qDiv.appendChild(createInput);
 
+
+var createSubmit=document.createElement("button");
+createSubmit.setAttribute("type", "submit");
+createSubmit.setAttribute("id", "submit");
+createSubmit.textContent="submit";
+
+qDiv.appendChild(createSubmit);
+
 createSubmit.addEventListener("click", function(){
 var initials=createInput.value;
 
 if (initials===null){
-    alert="please enter your initials";
+    prompt="please enter your initials";
 
 } else {
     var scores={
