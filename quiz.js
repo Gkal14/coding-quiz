@@ -63,17 +63,6 @@ if (interval===0){
 render(questionList);
 });
 
-
-const targetDiv=document.getElementById("hide");
-const btn=document.getElementById("begin");
-btn.onclick=function(){
-    if (targetDiv.style.display="none"){
-    }   else {
-        targetDiv.style.display="block";
-    }
-    
-};
-
 function render(questionList){
     qDiv.innerHTML="";
     ulCreate.innerHTML="";
@@ -143,10 +132,56 @@ if (secondsLeft >=0){
     clearInterval(interval);
     createP.textContent="Your score is: " + remainingTime;
 console.log("score")
+
+
     qDiv.appendChild(createP);
 }
 
-function gameOver(){
+var createLabel=document.createElement("label");
+createLabel.setAttribute("id", "createLabel");
+createLabel.textContent="Enter your initials to save your score: "
 
+qDiv.appendChild(createLabel);
+
+
+var createSubmit=document.createElement("button");
+createSubmit.setAttribute("type", "submit");
+createSubmit.setAttribute("id", "submit");
+createSubmit.textContent="submit";
+
+qDiv.appendChild(createSubmit);
+var createInput=document.createElement("input");
+createInput.setAttribute("type", "text");
+createInput.setAttribute("id", "initials");
+createInput.textContent="";
+
+qDiv.appendChild(createInput);
+
+createSubmit.addEventListener("click", function(){
+var initials=createInput.value;
+
+if (initials===null){
+    alert="please enter your initials";
+
+} else {
+    var scores={
+        initials: initials,
+        score: remainingTime
+    }
+    var allScores=localStorage.getItem("allScores");
+    if (allScores===null){
+        allScores=[];
+
+    } else {
+        allScores= JSON.parse(allScores);
+    }
+    allScores.push(scores);
+
+var newScore=JSON.stringify(allScores);
+localStorage.setItem("allScores", newScore);
+
+window.location.replace("./YourScores.html");
 }
+
+});
 }
